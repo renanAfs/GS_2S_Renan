@@ -191,7 +191,7 @@ resource "azurerm_virtual_machine" "vm03_public" {
     name                          = "vm03-public"
     location            = var.rglocation
   resource_group_name = var.rgname
-    network_interface_ids         = [azurerm_network_interface.vm01_nic_public1a.id]
+    network_interface_ids         = [azurerm_network_interface.vm03_nic_public1a.id]
     vm_size                       = "Standard_E2s_v3"
     delete_os_disk_on_termination = true
     storage_image_reference {
