@@ -47,7 +47,7 @@ jobs:
         aws-session-token    : ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region           : us-east-1
     - run: terraform -chdir=./terraform/aws init
-    - run: terraform -chdir=./terraform/azure validate
+    - run: terraform -chdir=./terraform/aws validate
     # - run : pip3 install checkov
     # - run : checkov --directory ./terraform
     # - run: terraform -chdir=./terraform/aws plan -out tfplan
