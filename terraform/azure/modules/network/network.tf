@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
     name     = "rg-gsrenan"
-    location = "canadacentral"
+    location = "brazilsouth"
 }
 
 resource "azurerm_virtual_network" "vneta" {
