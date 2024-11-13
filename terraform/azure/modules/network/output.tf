@@ -7,15 +7,15 @@ output "rglocation" {
 }
 
 output "vneta" {
- value = azurerm_virtual_network.vneta
+ value = azurerm_virtual_network.vneta.id
 }
 
 output "snvnetapub1a" {
- value = azurerm_subnet.snvnetapub1a
+ value = azurerm_subnet.snvnetapub1a.id
 }
 
 output "snvnetapub1b" {
- value = azurerm_subnet.snvnetapub1b
+ value = azurerm_subnet.snvnetapub1b.id
 }
 
 
