@@ -35,7 +35,7 @@ resource "azurerm_lb_rule" "lb" {
 
 #vm1 publica
 
-resource "azurerm_public_ip" "vm01_pip_public1a" {
+resource "azurerm_public_ip" "vm01_pip_public" {
     name                = "vm01-pip-public"
     location            = var.rglocation
   resource_group_name = var.rgname
