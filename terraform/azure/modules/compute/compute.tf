@@ -36,7 +36,7 @@ resource "azurerm_lb_rule" "lb" {
 #vm1 publica
 
 resource "azurerm_public_ip" "vm01_pip_public1a" {
-    name                = "vm01-pip-public"
+    name                = "vm01-pip-public1a"
     location            = var.rglocation
   resource_group_name = var.rgname
     allocation_method   = "Static"
@@ -102,7 +102,7 @@ resource "azurerm_virtual_machine" "vm01_public" {
 #vm2 publica
 
 resource "azurerm_public_ip" "vm02_pip_public" {
-    name                = "vm02-pip-public"
+    name                = "vm02-pip-public1c"
     location            = var.rglocation
   resource_group_name = var.rgname
     allocation_method   = "Static"
@@ -300,25 +300,25 @@ resource "azurerm_virtual_machine" "vm04_public" {
 #lb association
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm01" {
-    ip_configuration_name   = "vm01"
+    ip_configuration_name   = "vm01-pip-public1a"
     network_interface_id    = azurerm_network_interface.vm01_nic_public1a.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.lb.id
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm02" {
-    ip_configuration_name   = "vm02"
+    ip_configuration_name   = "vm02-pip-public1c"
     network_interface_id    = azurerm_network_interface.vm02_nic_public.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.lb.id
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm03" {
-    ip_configuration_name   = "vm02"
+    ip_configuration_name   = "vm03"
     network_interface_id    = azurerm_network_interface.vm03_nic_public1a.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.lb.id
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm04" {
-    ip_configuration_name   = "vm02"
+    ip_configuration_name   = "vm04"
     network_interface_id    = azurerm_network_interface.vm04_nic_public1a.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.lb.id
 }
