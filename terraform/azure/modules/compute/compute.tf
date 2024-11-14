@@ -122,7 +122,7 @@ resource "azurerm_network_interface" "vm02_nic_public" {
   resource_group_name = var.rgname
     ip_configuration {
         name                          = "vm02-ipconfig-public"
-        subnet_id                     = var.snvnetapub1a
+        subnet_id                     = var.snvnetapub1b
         private_ip_address_allocation = "Dynamic"
         public_ip_address_id          = azurerm_public_ip.vm02_pip_public.id
     }
